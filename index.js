@@ -6,7 +6,8 @@ let finalizar = "no";
 let precioLavado = 0;
 let cargaPorVehiculo = 0;
 let medioDePago;
-let totalAPagar;
+let cargaMedioDePago = 0;
+let totalAPagar = 0;
 
 while (finalizar != "SALIR") {
   alert(
@@ -61,7 +62,7 @@ while (finalizar != "SALIR") {
     precioLavado = 800;
   }
   console.log("PRECIO DE LAVADO: $" + precioLavado);
-
+  //la idea es que según el vehículo pague más barato o más caro, definido porcentualmente
   if ((tipoDeVehiculo = "TAXI")) {
     cargaPorVehiculo = 0.7;
   } else if ((tipoDeVehiculo = "AUTO PARTICULAR")) {
@@ -78,18 +79,20 @@ while (finalizar != "SALIR") {
   ).toUpperCase;
 
   if (medioDePago == "EFECTIVO") {
-    medioDePago = 0.9;
+    cargaMedioDePago = 9;
   } else if (medioDePago == "DÉBITO") {
-    medioDePago = 1;
+    cargaMedioDePago = 1;
   } else if (medioDePago == "CRÉDITO") {
-    medioDePago = 1.1;
+    cargaMedioDePago = 1;
   }
-  console.log(medioDePago);
 
-  let resultado = 0;
   function dineroAPagar(lavado, costoPorAuto, costoMediodePago) {
-    resultado = lavado * costoPorAuto * costoMediodePago;
+    return lavado * costoPorAuto * costoMediodePago;
   }
-  dineroAPagar(precioLavado, cargaPorVehiculo, medioDePago);
+  let resultado = dineroAPagar(
+    precioLavado,
+    cargaPorVehiculo,
+    cargaMedioDePago
+  );
   alert("El total a pagar es $" + resultado);
 }
