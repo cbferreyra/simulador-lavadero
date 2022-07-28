@@ -79,20 +79,23 @@ while (finalizar != "SALIR") {
   ).toUpperCase;
 
   if (medioDePago == "EFECTIVO") {
-    cargaMedioDePago = 9;
+    cargaMedioDePago = 0.9;
   } else if (medioDePago == "DÉBITO") {
     cargaMedioDePago = 1;
   } else if (medioDePago == "CRÉDITO") {
-    cargaMedioDePago = 1;
+    cargaMedioDePago = 1.1;
   }
 
-  function dineroAPagar(lavado, costoPorAuto, costoMediodePago) {
-    return lavado * costoPorAuto * costoMediodePago;
+  let total = precioLavado * cargaPorVehiculo * cargaMedioDePago;
+  console.log(total);
+
+  /* function dineroAPagar(lavado, costoPorAuto, costoMediodePago) {
+    return resultado (lavado * costoPorAuto * costoMediodePago);
   }
-  let resultado = dineroAPagar(
+  resultado = dineroAPagar(
     precioLavado,
     cargaPorVehiculo,
     cargaMedioDePago
-  );
-  alert("El total a pagar es $" + resultado);
+  );*/
+  alert("El total a pagar es $" + total);
 }
