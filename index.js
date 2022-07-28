@@ -27,6 +27,7 @@ while (finalizar != "SALIR") {
     }
     return solicitud;
   }
+
   console.log(solicitudDeTurno);
 
   let tipoDeVehiculo = prompt(
@@ -76,7 +77,7 @@ while (finalizar != "SALIR") {
 
   medioDePago = prompt(
     "Elija su medio de pago: \n EFECTIVO (10% de descuento) \n DÉBITO \n CRÉDITO (10% de recargo, sólo un pago disponible). "
-  ).toUpperCase;
+  ).toUpperCase();
 
   if (medioDePago == "EFECTIVO") {
     cargaMedioDePago = 0.9;
@@ -86,16 +87,9 @@ while (finalizar != "SALIR") {
     cargaMedioDePago = 1.1;
   }
 
-  let total = precioLavado * cargaPorVehiculo * cargaMedioDePago;
-  console.log(total);
-
-  /* function dineroAPagar(lavado, costoPorAuto, costoMediodePago) {
-    return resultado (lavado * costoPorAuto * costoMediodePago);
+  function dineroAPagar(lavado, costoPorAuto, costoMediodePago) {
+    return lavado * costoPorAuto * costoMediodePago;
   }
-  resultado = dineroAPagar(
-    precioLavado,
-    cargaPorVehiculo,
-    cargaMedioDePago
-  );*/
-  alert("El total a pagar es $" + total);
+  resultado = dineroAPagar(precioLavado, cargaPorVehiculo, cargaMedioDePago);
+  alert("El total a pagar es $" + resultado);
 }
